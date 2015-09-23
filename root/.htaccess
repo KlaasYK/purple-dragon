@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /purple-dragon/root
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /purple-dragon/root/index.php/$1 [L]

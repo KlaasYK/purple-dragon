@@ -1,0 +1,4 @@
+application/cache
+# Prevent leaking of database config
+application/config/database.php
+application/logs
