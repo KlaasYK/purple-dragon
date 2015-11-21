@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container"> <!-- ng-controller="GeneSearchCtrl"-->
     <div class="form-group">
       <div class="input-group">
-        <input type="search" class="form-control" ng-model="query" id="gene-query" placeholder="search">
+        <input type="search" class="form-control" id="gene-query" placeholder="search">
         <div class="input-group-btn">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">search <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-right">
@@ -54,18 +54,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ul>
       </div><!-- /btn-group -->
       </div>
-    </div>
-    <div ng-controller="ResultListCtrl">
-      <div class="table-responsive">
-        <table class="table table-striped table-condensed">
-          <tr><th>Name</th><th>Class</th></tr>
-          <tr ng-repeat="gene in genes | filter:query">
-            <td><span>{{gene.name}}</span></td><td>{{gene.class}}</td>
-          </tr>
-        </table>
+    </div> <!-- search bar-->
+
+    <div class="row">
+      <div class="col-md-3">
+        Params
+      </div>
+      <div class="col-md-9">
+        <div ng-controller="ResultListCtrl">
+          <div class="table-responsive">
+            <table class="table table-striped table-condensed">
+              <tr><th>Name</th><th>Class</th></tr>
+              <tr ng-repeat="gene in genes">
+                <td><span>{{gene.name}}</span></td><td>{{gene.class}}</td>
+              </tr>
+            </table>
+          </div>
+        </div><!-- ng-controller -->
       </div>
     </div>
-  </div>
+  </div><!-- container-->
 </body>
 
 </html>
